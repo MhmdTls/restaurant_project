@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from Base_App.views import *
+from Resturant_Project.Base_App.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin_pannel'),
