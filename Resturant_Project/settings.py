@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Base_App',
+    'Resturant_Project.Base_App',
 ]
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
