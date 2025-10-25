@@ -1,5 +1,5 @@
 from django.contrib import admin
-from Base_App.models import *
+from .models import *
 # Register your models here.
 
 admin.site.register(ItemList)
