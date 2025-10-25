@@ -6,7 +6,7 @@ from django.conf import settings
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.views import LoginView as AuthLoginView
-from Base_App.models import BookTable, AboutUs, Feedback, ItemList, Items, Cart
+from .models import BookTable, AboutUs, Feedback, ItemList, Items, Cart
 from django.contrib.auth import logout
 from django.urls import reverse_lazy
 
