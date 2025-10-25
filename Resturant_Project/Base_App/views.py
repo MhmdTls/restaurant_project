@@ -42,19 +42,20 @@ def add_to_cart(request):
 
 
 def get_cart_items(request):
-    if request.user.is_authenticated:
-        cart_items = Cart.objects.filter(user=request.user).select_related('item')
-        items = [
-            {
-                'name': cart_item.item.Item_name,
-                'quantity': cart_item.quantity,
-                'price': cart_item.item.Price,
-                'total': cart_item.quantity * cart_item.item.Price,
-            }
-            for cart_item in cart_items
-        ]
-        return JsonResponse({'items': items}, safe=False)
-    return JsonResponse({'error': 'User not authenticated'}, status=401)
+    cart = request.session.get('cart', {})
+
+    items = [
+        {
+            'name': data['name'],
+            'quantity': data['quantity'],
+            'price': data['price'],
+            'total': data['quantity'] * data['price'],
+        }
+        for data in cart.values()
+    ]
+
+    return JsonResponse({'items': items})
+
 
 class LoginView(AuthLoginView):
     template_name = 'login.html'
