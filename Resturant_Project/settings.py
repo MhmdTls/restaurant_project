@@ -25,7 +25,7 @@ DEBUG = False
 # Use the Render URL and ensure it works with dynamic hosts
 # Replace 'your-render-url.onrender.com' with your actual Render service URL
 ALLOWED_HOSTS = [
-    'your-render-url.onrender.com', 
+    'https://restaurant-project-1-fck3.onrender.com', 
     '127.0.0.1', 
     'localhost',
     os.environ.get('ALLOWED_HOSTS') # Good practice for reading env vars if set
